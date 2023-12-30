@@ -1,0 +1,15 @@
+Will be added in next updates :
+
+	start         Start XAMPP (Apache, MySQL and eventually others)
+	startftp      Start only ProFTPD
+
+	stop          Stop XAMPP (Apache, MySQL and eventually others)
+	stopftp       Stop only ProFTPD
+
+	reload        Reload XAMPP (Apache, MySQL and eventually others)
+	reloadapache  Reload only Apache
+	reloadmysql   Reload only MySQL
+	reloadftp     Reload only ProFTPD
+	restart       Stop and start XAMPP
+	security      Check XAMPP's security
+	backup        Make backup file of your XAMPP config, log and data files

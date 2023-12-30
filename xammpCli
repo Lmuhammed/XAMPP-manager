@@ -1,0 +1,103 @@
+#!/bin/bash
+current_dir=$(pwd)
+Xammp_dir="/opt/lampp/"
+# Echo the current directory
+if [ "$#" -lt 1 ]; then
+   echo "Usage: $0 [Service] <Action>"
+   echo "Service:
+  gui                 Start the gui
+  apch                Select Apache
+  db                  Select Database (MariadDB)
+  both                Select both the apache & database
+  h                   List all xampp commands
+  "
+  echo "Action:
+  on                  Turn on the service/services
+  off                 Turn off the service/services
+  "
+  exit 1
+fi
+# Assign the arguments to variables and lowercase
+arg1=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+arg2=$(echo "$2" | tr '[:upper:]' '[:lower:]')
+#Vars
+both=null
+apch=null
+db=null
+off=null
+on=null
+cd $Xammp_dir
+#Check arg1
+case $arg1 in
+   gui)
+       sudo ./manager-linux-x64.run
+       exit 1
+       ;;
+    h)
+       sudo ./xampp panel
+       exit 1
+       ;;
+   apch)
+       apch=true
+       ;;
+   db)
+       db=true
+       ;;
+   both)
+       both=true
+       ;;
+   *)
+       echo "Error...Retry"
+       ;;
+esac
+#Check arg2
+case $arg2 in
+   on)
+       on=true
+       ;;
+   off)
+       off=true
+       ;;
+   *)
+       echo "Error...Retry"
+       ;;
+esac
+#Check if apache and db selected
+if [ $both = true ]
+then
+if [[ $on = true ]]
+   then
+    sudo ./xampp startapache
+    sudo ./xampp startmysql
+
+   elif [[ $off = true ]]
+   then
+    sudo ./xampp stopapache
+    sudo ./xampp stopmysql   
+    fi
+fi
+#Check if apache selected
+if [ $apch = true ]
+ then
+#echo "Apache selected"
+if [[ $on = true ]]
+   then
+      sudo ./xampp startapache
+   elif [[ $off = true ]]
+   then
+       sudo ./xampp stopapache
+   fi
+fi
+#Check if db selected
+if [ $db = true ]
+then
+#echo "db selected"
+if [[ $on = true ]]
+   then
+       sudo ./xampp startmysql
+   elif [[ $off = true ]]
+   then
+       sudo ./xampp stopmysql 
+   fi
+fi
+cd $current_dir
