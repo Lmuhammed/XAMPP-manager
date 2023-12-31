@@ -8,6 +8,7 @@ if [ "$#" -lt 1 ]; then
   gui                 Start the gui
   apch                Select Apache
   db                  Select Database (MariadDB)
+  ftp                 Select ProFTPD
   both                Select both the apache & database
   h                   List all xampp commands
   "
@@ -24,6 +25,7 @@ arg2=$(echo "$2" | tr '[:upper:]' '[:lower:]')
 both=null
 apch=null
 db=null
+ftp=null
 off=null
 on=null
 cd $Xammp_dir
@@ -42,6 +44,9 @@ case $arg1 in
        ;;
    db)
        db=true
+       ;;
+    ftp)
+       ftp=true
        ;;
    both)
        both=true
@@ -91,13 +96,23 @@ fi
 #Check if db selected
 if [ $db = true ]
 then
-#echo "db selected"
 if [[ $on = true ]]
    then
        sudo ./xampp startmysql
    elif [[ $off = true ]]
    then
        sudo ./xampp stopmysql 
+   fi
+fi
+#Check if ftp selected
+if [ $ftp = true ]
+then
+if [[ $on = true ]]
+   then
+       sudo ./xampp startftp
+   elif [[ $off = true ]]
+   then
+       sudo ./xampp stopftp 
    fi
 fi
 cd $current_dir

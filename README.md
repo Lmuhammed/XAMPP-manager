@@ -1,6 +1,6 @@
 # XammpCliManger
 
-<img src="https://github.com/X00Byte/XammpCliManger/blob/main/repo_background.png" alt="Logo">
+<img src="https://github.com/X00Byte/Xammp-manager/blob/main/repo_background.png" alt="Logo">
 <div align="center">
 <h2>
 <p>
@@ -17,9 +17,13 @@ Easly manage you Xampp ON Gnu/Linux
 
 إدارة البرنامج من الواجهة الرسومية تستهلك الموارد لذلك قمت بكتابة هذا الملف البرمجي بلغة باش لكي أتمكن من الإدارة بسرعة وفعالية عن طريقة محبوبتنا الطرفية
 - طريقة التشغيل
-بعد تنزيل المستودع ، افتح الطرفية داخل الملف قم بتغير صلاحيات الملف البرمجي بلغة الباش : chmod +x XamppCliManager.sh
-نفذ البريمج
-./XamppCliManager.sh
+بعد تنزيل المستودع ، افتح الطرفية داخل الملف قم بتغير صلاحيات الملف بريمج الباش و تشغيله :
+
+```bash
+chmod +x xammpCli
+./xammpCli
+```
+
 - قدراتك البرمجية الخارقة مطلوبة :
   
 <div align="center">
@@ -37,8 +41,11 @@ Easly manage you Xampp ON Gnu/Linux
 Managing **XAMPP** the program from the graphical interface consumes resources, so I wrote this software file in Bash language so that I can quickly and effectively manage **Xampp** from your beloved terminal 
 - Run
   Clone th repo
-  change permession : chmod +x XamppCliManager.sh
-  run the script    : ./XamppCliManager.sh
+
+```bash
+chmod +x xammpCli
+./xammpCli
+```
 - Report a bug or Sugget a new feature
 This script is not perfect , your contribution will makes it much better : 
   <a href="https://github.com/X00Byte/XammpCliManger/issues">Report Bug</a>
