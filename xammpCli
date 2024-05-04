@@ -1,7 +1,15 @@
 #!/bin/bash
-current_dir=$(pwd)
-Xammp_dir="/opt/lampp/"
-# Echo the current directory
+current_dir=$(pwd) # Get current directory
+Xammp_dir="/opt/lampp/" #Xammp location 
+# functions
+check_xampp_installed() {
+    if [ ! -d "$Xammp_dir" ]; then
+        echo "XAMPP is not installed."
+        exit 1
+    fi
+}
+# end functions 
+check_xampp_installed # check if xammp installed 
 if [ "$#" -lt 1 ]; then
    echo "Usage: $0 [Service] <Action>"
    echo "Service:
