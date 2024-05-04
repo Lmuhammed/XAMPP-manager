@@ -8,6 +8,60 @@ check_xampp_installed() {
         exit 1
     fi
 }
+ftpSelected() {
+if [ $ftp = true ]
+then
+if [[ $on = true ]]
+   then
+       sudo ./xampp startftp
+   elif [[ $off = true ]]
+   then
+       sudo ./xampp stopftp 
+   fi
+fi
+}
+dbSelected() {
+if [ $db = true ]
+then
+if [[ $on = true ]]
+   then
+       sudo ./xampp startmysql
+   elif [[ $off = true ]]
+   then
+       sudo ./xampp stopmysql 
+   fi
+fi
+}
+allSelected() {
+if [ $all = true ]
+then
+if [[ $on = true ]]
+   then
+    sudo ./xampp startapache
+    sudo ./xampp startmysql
+    sudo ./xampp startftp
+   elif [[ $off = true ]]
+   then
+    sudo ./xampp stopapache
+    sudo ./xampp stopmysql   
+    sudo ./xampp stopftp   
+    fi
+fi
+}
+apacheSelected() {
+#Check if apache selected
+if [ $apch = true ]
+ then
+#echo "Apache selected"
+if [[ $on = true ]]
+   then
+      sudo ./xampp startapache
+   elif [[ $off = true ]]
+   then
+       sudo ./xampp stopapache
+   fi
+fi
+}
 # end functions 
 check_xampp_installed # check if xammp installed 
 if [ "$#" -lt 1 ]; then
@@ -17,7 +71,7 @@ if [ "$#" -lt 1 ]; then
   apch                Select Apache
   db                  Select Database (MariadDB)
   ftp                 Select ProFTPD
-  both                Select both the apache & database
+  all                 Select  apache ftp & database
   h                   List all xampp commands
   "
   echo "Action:
@@ -30,7 +84,7 @@ fi
 arg1=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 arg2=$(echo "$2" | tr '[:upper:]' '[:lower:]')
 #Vars
-both=null
+all=null
 apch=null
 db=null
 ftp=null
@@ -56,8 +110,8 @@ case $arg1 in
     ftp)
        ftp=true
        ;;
-   both)
-       both=true
+   all)
+       all=true
        ;;
    *)
        echo "Error...Retry"
@@ -75,52 +129,8 @@ case $arg2 in
        echo "Error...Retry"
        ;;
 esac
-#Check if apache and db selected
-if [ $both = true ]
-then
-if [[ $on = true ]]
-   then
-    sudo ./xampp startapache
-    sudo ./xampp startmysql
-
-   elif [[ $off = true ]]
-   then
-    sudo ./xampp stopapache
-    sudo ./xampp stopmysql   
-    fi
-fi
-#Check if apache selected
-if [ $apch = true ]
- then
-#echo "Apache selected"
-if [[ $on = true ]]
-   then
-      sudo ./xampp startapache
-   elif [[ $off = true ]]
-   then
-       sudo ./xampp stopapache
-   fi
-fi
-#Check if db selected
-if [ $db = true ]
-then
-if [[ $on = true ]]
-   then
-       sudo ./xampp startmysql
-   elif [[ $off = true ]]
-   then
-       sudo ./xampp stopmysql 
-   fi
-fi
-#Check if ftp selected
-if [ $ftp = true ]
-then
-if [[ $on = true ]]
-   then
-       sudo ./xampp startftp
-   elif [[ $off = true ]]
-   then
-       sudo ./xampp stopftp 
-   fi
-fi
+allSelected
+apacheSelected
+dbSelected
+ftpSelected
 cd $current_dir
