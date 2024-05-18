@@ -1,10 +1,29 @@
-import os  #
-import sys #To check params passed  to script
+import os        #
+import sys      #To check params passed  to script
+import platform #To check the operating system
+
 #Functions
+
+#1-Check if Xammp installed
+
 def check_xampp_installed(directory_path):
     if not os.path.isdir(directory_path):
         print("xampp is not installed.")
         exit(1)
+
+#2- Check OS and return Xammp path
+
+def check_os():
+    system = platform.system()
+    if system == 'Windows':
+        return "C:\\xampp"
+    elif system == 'Linux':
+        return "/opt/lampp/"
+    else:
+        print("Unknown OS")
+        exit(1)
+
+#3-Display help menu if no args passed to script
 
 def help_menu():
     script_name = os.path.basename(__file__)
@@ -18,6 +37,8 @@ def help_menu():
     print("  on                  Turn on  the service/services")
     print("  off                 Turn off the service/services")
     exit(1)
+
+#4-Action on one or multi services
 
 def oneOrMulti_services(service,argument,allServices=None):
     #Check if all services 
@@ -43,13 +64,16 @@ def oneOrMulti_services(service,argument,allServices=None):
         else:
             print(f"Invalid parameter  name : {argument} ")
             help_menu()
+
+
             
 #End Functions Declaration
+
 if len(sys.argv) == 1: #Check params passed to the script
     help_menu()
     exit(2)
 
-Xammp_dir="/opt/lampp/"
+Xammp_dir=check_os()
 check_xampp_installed(Xammp_dir)
 os.chdir(Xammp_dir)
 param = (sys.argv[1]).lower()
