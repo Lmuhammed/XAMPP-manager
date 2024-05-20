@@ -16,7 +16,10 @@ def check_xampp_installed(directory_path):
 def check_os():
     system = platform.system()
     if system == 'Windows':
-        return "C:\\xampp"
+        #Later commands will be dynamics ;if windows commands will start without sudo
+        print("Support for windows will add later")
+        exit(1)
+        #return "C:\\xampp"
     elif system == 'Linux':
         return "/opt/lampp/"
     else:
@@ -28,14 +31,15 @@ def check_os():
 def help_menu():
     script_name = os.path.basename(__file__)
     print(f"Usage: {script_name} [Service] <Action>")
-    print("Service  :")
-    print("  -ap / --apache       Select Apache")
+    print("---> Service  :")
+    print("  -ap / --apache      Select Apache")
     print("  db / --mysql        Select Database (MariadDB)")
     print("  -ftp                Select ProFTPD")
     print("  all                 Select apache ftp & database")
-    print("Action   :")
-    print("  on                  Turn on  the service/services")
-    print("  off                 Turn off the service/services")
+    print("---> Action   :")
+    print("  On                  Turn on  the service/services")
+    print("  Off                 Turn off the service/services")
+    print("  Reload              Reload  the service/services")
     exit(1)
 
 #4-Action on one or multi services
@@ -49,6 +53,9 @@ def oneOrMulti_services(service,argument,allServices=None):
         elif argument == "off" :
             command="sudo ./xampp stopapache ; sudo ./xampp stopmysql ; sudo ./xampp stopftp"
             os.system(command)
+        elif argument == "reload" :
+            command="sudo ./xampp reloadapache;sudo ./xampp reloadmysql;sudo ./xampp reloadftp"
+            os.system(command)
         else:
             print(f"Invalide argument with : all ")
             sys.exit()
@@ -60,6 +67,9 @@ def oneOrMulti_services(service,argument,allServices=None):
 
         elif argument == "off" :
             command="sudo ./xampp stop"+service
+            os.system(command)
+        elif argument == "reload" :
+            command="sudo ./xampp reload"+service
             os.system(command)
         else:
             print(f"Invalid parameter  name : {argument} ")
