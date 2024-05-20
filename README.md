@@ -28,6 +28,8 @@ cd ./Xammp-Manager
 ```
 2.تشغيله
 
+في أنظمة جنو لينكس
+
 ```bash
 cd ./Xammp-Manager
 chmod +x xammpCli.py
