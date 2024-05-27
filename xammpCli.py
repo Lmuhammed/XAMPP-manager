@@ -65,16 +65,16 @@ def oneOrMulti_services(service,argument,allServices=None):
     if allServices is True:
         if argument == "on" :
             command="sudo ./xampp startapache ; sudo ./xampp startmysql ; sudo ./xampp startftp"
-            os.system(command)
         elif argument == "off" :
             command="sudo ./xampp stopapache ; sudo ./xampp stopmysql ; sudo ./xampp stopftp"
-            os.system(command)
         elif argument == "reload" :
             command="sudo ./xampp reloadapache;sudo ./xampp reloadmysql;sudo ./xampp reloadftp"
-            os.system(command)
-        else:
-            print(f"Invalide argument with : all ")
+        else :
+            print(f"Invalide argument : {argument} with : all services ")
             sys.exit()
+        #Execute commands
+        os.system(command)
+            
     #Check if a service checked : apache , mysql or ftp            
     else :
         if argument == "on" :
