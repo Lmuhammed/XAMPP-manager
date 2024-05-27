@@ -3,6 +3,22 @@ import sys      #To check params passed  to script
 import platform #To check the operating system
 
 #Functions
+#0- App Banner :p
+def print_header():
+    # Website used to create this piece of art :D : https://www.asciiart.eu/text-to-ascii-art
+    header = r"""
+  .----------------.  .----------------.  .----------------. 
+| .--------------. || .--------------. || .--------------. |
+| |  ____  ____  | || |     ______   | || | ____    ____ | |
+| | |_  _||_  _| | || |   .' ___  |  | || ||_   \  /   _|| |
+| |   \ \  / /   | || |  / .'   \_|  | || |  |   \/   |  | |
+| |    > `' <    | || |  | |         | || |  | |\  /| |  | |
+| |  _/ /'`\ \_  | || |  \ `.___.'\  | || | _| |_\/_| |_ | |
+| | |____||____| | || |   `._____.'  | || ||_____||_____|| |
+| |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' |
+ '----------------'  '----------------'  '----------------'  """
+    print(header)
 
 #1-Check if Xammp installed
 
@@ -17,7 +33,7 @@ def check_os():
     system = platform.system()
     if system == 'Windows':
         #Later commands will be dynamics ;if windows commands will start without sudo
-        print("Support for windows will add later")
+        print("Support for windows will be added later")
         exit(1)
         #return "C:\\xampp"
     elif system == 'Linux':
@@ -78,7 +94,7 @@ def oneOrMulti_services(service,argument,allServices=None):
 
             
 #End Functions Declaration
-
+print_header()
 if len(sys.argv) == 1: #Check params passed to the script
     help_menu()
     exit(2)
