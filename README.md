@@ -1,11 +1,10 @@
 # XammpCliManger
 
-<img src="https://github.com/X00Byte/Xammp-manager/blob/main/repo_background.png" alt="Logo">
+<img src="https://github.com/X00Byte/Xammp-manager/blob/main/repo_pic.png" alt="Logo">
 <div align="center">
 <h2>
 <p>
-    إدارة من سطر الأوامر لبرنامج xammp
-
+    إدارة من سطر الأوامر لبرنامج XAMPP
 </p>  
 Easly manage you Xampp Using CLI
 </h2>

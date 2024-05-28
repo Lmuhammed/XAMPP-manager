@@ -74,7 +74,8 @@ def oneOrMulti_services(service,argument,allServices=None):
             sys.exit()
         #Execute commands
         os.system(command)
-            
+        exit(1)
+        
     #Check if a service checked : apache , mysql or ftp            
     else :
         if argument == "on" :
