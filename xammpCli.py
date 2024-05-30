@@ -7,6 +7,7 @@ import platform #To check the operating system
 def print_header():
     # Website used to create this piece of art :D : https://www.asciiart.eu/text-to-ascii-art
     header = r"""
+    
   .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. |
 | |  ____  ____  | || |     ______   | || | ____    ____ | |
@@ -17,7 +18,9 @@ def print_header():
 | | |____||____| | || |   `._____.'  | || ||_____||_____|| |
 | |              | || |              | || |              | |
 | '--------------' || '--------------' || '--------------' |
- '----------------'  '----------------'  '----------------'  """
+ '----------------'  '----------------'  '----------------'  
+ 
+    """
     print(header)
 
 #1-Check if Xammp installed
@@ -92,8 +95,8 @@ def oneOrMulti_services(service,argument,allServices=None):
 
             
 #End Functions Declaration
-print_header()
 if len(sys.argv) == 1: #Check params passed to the script
+    print_header()
     help_menu()
     exit(2)
 
