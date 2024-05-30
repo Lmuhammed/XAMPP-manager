@@ -80,17 +80,14 @@ def oneOrMulti_services(service,argument,allServices=None):
     else :
         if argument == "on" :
             command="sudo ./xampp start"+service
-            os.system(command)
-
         elif argument == "off" :
             command="sudo ./xampp stop"+service
-            os.system(command)
         elif argument == "reload" :
             command="sudo ./xampp reload"+service
-            os.system(command)
         else:
             print(f"Invalid parameter  name : {argument} ")
             help_menu()
+        os.system(command)
 
 
             
