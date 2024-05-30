@@ -1,13 +1,19 @@
-import os        #
-import sys      #To check params passed  to script
-import platform #To check the operating system
+#Check the dependencies before running the script
+try:
+    import os       #To run the xammp commands
+    import sys      #To check params passed  to script
+    import platform #To check the operating system
+except ImportError:
+    print("Error: This script requires : 'os' , 'sys' or 'platform' modules")
+    print("Please install the dependencies before running the script.")
+    raise SystemExit(1)
 
 #Functions
 #0- App Banner :p
 def print_header():
     # Website used to create this piece of art :D : https://www.asciiart.eu/text-to-ascii-art
     header = r"""
-    
+
   .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. |
 | |  ____  ____  | || |     ______   | || | ____    ____ | |
