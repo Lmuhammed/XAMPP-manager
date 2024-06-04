@@ -55,16 +55,29 @@ def check_os():
 
 def help_menu():
     script_name = os.path.basename(__file__)
-    print(f"Usage: {script_name} [Service] <Action>")
-    print("---> Service  :")
-    print("  -ap / --apache      Select Apache")
-    print("  db / --mysql        Select Database (MariadDB)")
-    print("  -ftp                Select ProFTPD")
-    print("  all                 Select apache ftp & database")
-    print("---> Action   :")
-    print("  On                  Turn on  the service/services")
-    print("  Off                 Turn off the service/services")
-    print("  Reload              Reload  the service/services")
+    msg = f"""
+    Usage: {script_name} [service] [action]
+
+    service:
+
+    -ap  --apache     select Apache
+    db   --mysql      select Database (MariadDB)
+    -ftp              select ProFTPD
+    all               select apache ftp & database
+
+    Options:
+
+    on                turn on  the service/services
+    off               turn off the service/services
+    reload            reload  the service/services
+
+    Examples:
+
+    {script_name}  -ap on       start apache server
+    {script_name}   db off      turn off the database
+    {script_name}  -all on      start all the services
+    """
+    print(msg)    
     exit(1)
 
 #4-Action on one or multi services
