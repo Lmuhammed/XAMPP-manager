@@ -61,7 +61,7 @@ def help_menu():
     service:
 
     -ap  --apache     select Apache
-    db   --mysql      select Database (MariadDB)
+    -db   --mysql     select Database (MariadDB)
     -ftp              select ProFTPD
     all               select apache ftp & database
 
