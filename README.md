@@ -1,6 +1,6 @@
-# XammpCliManger
+# XAMPP-manager
 
-<img src="https://github.com/X00Byte/Xammp-manager/blob/main/repo_pic.png" alt="Logo">
+<img src="https://github.com/Lmuhammed/Xammp-manager/blob/main/repo_pic.png" alt="Logo">
 <div align="center">
 <h2>
 <p>
@@ -22,7 +22,7 @@ Easly manage you Xampp Using CLI
 إفتح الطرفية في المكان المفضل (مثال $HOME/Desktop)
 
 ```bash
-gh repo clone L-mohamed/Xammp-Manager
+gh repo clone Lmuhammed/Xammp-Manager
 cd ./Xammp-Manager
 ```
 2.تشغيله
@@ -39,11 +39,8 @@ python3 xammpCli.py
   
 <div align="left">
     هذا البريمج لايزال في طفولته المبكرة ، لذا إذ إكتشفت خطأ ما:
-   <a href="https://github.com/X00Byte/XammpCliManger/issues">أبلغ عن خطأ</a>
+   <a href="https://github.com/Lmuhammed/XAMPP-manager/issues">أبلغ عن خطأ</a>
                                                                                            
-
-   أو لديك إقتراح لتطويره أو إضافة ميزة جديدة :
-  <a href="https://github.com/X00Byte/XammpCliManger/issues">أطلب ميزة جديدة</a>
 
 </div> 
       
@@ -54,7 +51,7 @@ Managing **XAMPP** the program from the graphical interface consumes resources, 
 
   Clone th repo
 ```bash
-gh repo clone L-mohamed/Xammp-Manager
+gh repo clone Lmuhammed/Xammp-Manager
 cd ./Xammp-Manager
 ```
 
@@ -63,9 +60,7 @@ cd ./Xammp-Manager
 chmod +x xammpCli.py
 python3 xammpCli.py
 ```
-
 - Report a bug or Sugget a new feature
 This script is not perfect , your contribution will makes it much better : 
-  <a href="https://github.com/X00Byte/XammpCliManger/issues">Report Bug</a>
-  <a href="https://github.com/X00Byte/XammpCliManger/issues">Request Feature</a>
+  <a href="https://github.com/Lmuhammed/XAMPP-manager/issues">Report Bug</a>
 
