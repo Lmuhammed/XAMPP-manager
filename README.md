@@ -19,10 +19,10 @@ Easly manage you Xampp Using CLI
 بعد تنزيل المستودع ، افتح الطرفية داخل الملف قم بتغير صلاحيات الملف و تشغيله :
 
 1.تنزيل المستودع
-إفتح الطرفية في المكان المفضل (مثال $HOME/Desktop)
+إفتح الطرفية في المكان المفضل (مثال HOME/Desktop$)
 
 ```bash
-gh repo clone Lmuhammed/Xammp-Manager
+git clone https://github.com/Lmuhammed/XAMPP-manager.git
 cd ./Xammp-Manager
 ```
 2.تشغيله
@@ -37,21 +37,21 @@ python3 xammpCli.py
 
 - قدراتك البرمجية الخارقة مطلوبة :
   
-<div align="left">
+<div align="center">
     هذا البريمج لايزال في طفولته المبكرة ، لذا إذ إكتشفت خطأ ما:
-   <a href="https://github.com/Lmuhammed/XAMPP-manager/issues">أبلغ عن خطأ</a>
+ <a href="https://github.com/Lmuhammed/XAMPP-manager/issues">أبلغ عن خطأ</a>
                                                                                            
 
 </div> 
       
 ## English MAN 
 - Why using this script
-Managing **XAMPP** the program from the graphical interface consumes resources, so I wrote this software file in Bash language so that I can quickly and effectively manage **Xampp** from your beloved terminal 
+Managing **XAMPP** the program from the graphical interface consumes resources, so I wrote this software file in Bash language so that I can quickly and effectively manage **Xampp** from your beloved terminal .
 - Run
 
   Clone th repo
 ```bash
-gh repo clone Lmuhammed/Xammp-Manager
+git clone https://github.com/Lmuhammed/XAMPP-manager.git
 cd ./Xammp-Manager
 ```
 
@@ -62,5 +62,5 @@ python3 xammpCli.py
 ```
 - Report a bug or Sugget a new feature
 This script is not perfect , your contribution will makes it much better : 
-  <a href="https://github.com/Lmuhammed/XAMPP-manager/issues">Report Bug</a>
+ <a href="https://github.com/Lmuhammed/XAMPP-manager/issues">Report Bug</a>
 
